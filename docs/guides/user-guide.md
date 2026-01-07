@@ -1,6 +1,6 @@
 ## Overview
 
-A tiny example Express server application intended as a learning/demo component for the docs site. It accepts JSON payloads and stores items in an in-memory array.
+[server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js) is a tiny example Express server application intended as a learning/demo component for the docs site. It accepts JSON payloads and stores items in an in-memory array.
 
 ## Behavior summary
 
@@ -27,6 +27,14 @@ A tiny example Express server application intended as a learning/demo component 
 
     curl -s http://localhost:8080/api/items
 
+- Get item by id (replace `<id>` with a real id):
+
+    curl -s http://localhost:8080/api/items/<id>
+
+- Delete item by id (replace `<id>` with a real id):
+
+    curl -s -X DELETE http://localhost:8080/api/items/<id>
+
 ## When to extend
 
-- If you add persistence or new endpoints, document them in `docs/server/api-guide.md` and add tests or examples in the docs.
+- If you add persistence or new endpoints, document them in `docs/guides/api-guide.md` and add tests or examples in the docs.

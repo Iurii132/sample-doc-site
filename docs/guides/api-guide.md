@@ -10,8 +10,11 @@ Base URL: http://localhost:8080
 The following table provides a summary of endpoints:
 
 |**Endpoint**|**Method**|**Description**|
-|/api/items|GET}Returns an array of items stored in memory.|
-|/api/items|POST}Creates a new item in the memore based on the provided JSON body.|
+|--|--|--|
+|/api/items|GET|Returns an array of items stored in memory.|
+|/api/items|POST|Creates a new item in memory based on the provided JSON body.|
+|/api/items/:id|GET|Returns a single item by `id` (404 if not found).|
+|/api/items/:id|DELETE|Deletes an item by `id` (204 on success, 404 if not found).|
 
 
 
@@ -47,18 +50,42 @@ The following table provides a summary of endpoints:
 
 - Create item (curl):
 
-  curl -X POST http://localhost:8080/api/items \
-    -H "Content-Type: application/json" \
-    -d '{"name":"test"}'
-
+    ```curl
+	-X POST http://localhost:8080/api/items \
+      -H "Content-Type: application/json" \
+      -d '{"name":"test"}'
+    ```
 
 - Retrieve items (curl):
 
-  curl http://localhost:8080/api/items
+    ```curl http://localhost:8080/api/items```
+
+- Retrieve item by id (curl):
+
+    ```bash
+    curl http://localhost:8080/api/items/<id>
+    ```
+
+- Delete item by id (curl):
+
+    ```bash
+    curl -X DELETE http://localhost:8080/api/items/<id>
+    ```
+
+### GET /api/items/:id
+
+- Description: Returns a single item by `id`.
+- Response: 200 OK with the item body, or 404 Not Found if the id does not exist.
+
+### DELETE /api/items/:id
+
+- Description: Deletes the item with the given `id`.
+- Success: 204 No Content on successful deletion.
+- Error: 404 Not Found if the id does not exist.
 
 
-### Notes
+## Notes
 
 !!!Notes
     - `id` is generated via `cryptoRandomId()` in `application/server.js` and is not meant to be collision-resistant.
-    - If you extend the API, add route docs here and update `docs/server/user-guide.md` with usage examples.
+    - If you extend the API, add route docs here and update `docs/guides/user-guide.md` with usage examples.

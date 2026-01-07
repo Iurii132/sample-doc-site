@@ -10,14 +10,14 @@ This is a small sample documentation site (built using MkDocs Material) that inc
 
 - Preview docs (Windows):
 
-  1. python -m venv .venv && .\.venv\Scripts\activate
-  2. pip install -r requirements.txt
-  3. mkdocs serve
+    1. python -m venv .venv && .\.venv\Scripts\activate
+    2. pip install -r requirements.txt
+    3. mkdocs serve
 
 - Run the example API:
 
-  1. cd application
-  2. npm init -y
-  3. npm install express
-  4. node server.js
+    1. cd application
+    2. npm init -y
+    3. npm install express
+    4. node server.js
 
