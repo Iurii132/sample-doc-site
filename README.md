@@ -1,20 +1,35 @@
+
+
 ## Overview
 
-This is a small sample documentation site (built using MkDocs Material) that includes documentation for a small API application. 
+This repository includes the following items:
+
+- API application [server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js).
+- Documentation for the API application in markdown format and configuration files for the documentation site.
+- GitHub workflow (pipeline) to deploy the documentation to [GitHub Pages](https://iurii132.github.io/learning-tech/) when there are changes to the `documentation` folder under the `main` branch.
+
 
 ## Purpose
-- Provide a lightweight documentation-first example project showing how docs and a simple API app can live together in the same repo.
-- Explore how AI updates documents together with code
+
+- Provide a sample documentation workflow that includes key artifacts and deliverables - application, documentation site, user guide, setup guide, API guide, and CI/CD process.
+- Explore how AI can update documents together with code
 
 ## Quick start
+
 - Preview docs (Windows):
-  1. python -m venv .venv && .\.venv\Scripts\activate
-  2. pip install -r requirements.txt
-  3. mkdocs serve
+
+    ```
+    python -m venv .venv && .\.venv\Scripts\activate
+    pip install -r requirements.txt
+    mkdocs serve
+	```
 
 - Run the example API:
-  1. cd application
-  2. npm init -y
-  3. npm install express
-  4. node server.js
+
+	```
+    cd application
+    npm init -y
+    npm install express
+    node server.js
+	```
 

@@ -1,0 +1,100 @@
+
+site_name: learning-tech
+site_description: A clean, modern docs site powered by MkDocs Material.
+site_url: https://Iurii132.github.io/learning-tech
+repo_url: https://github.com/Iurii132/learning-tech
+repo_name: Iurii132/learning-tech
+
+# Theme configuration (Material)
+theme:
+  name: material
+  language: en
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - toc.integrate
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit   # shows "Edit this page" if repo settings are set
+  icon:
+    repo: fontawesome/brands/github
+
+# Enable common Markdown extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - def_list
+  - abbr
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+#  - pymdownx.emoji:
+#      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+# Plugins
+plugins:
+  - search
+ # - mermaid2 
+  # Uncomment if you use Google Analytics or similar via mkdocs-material
+  # - social
+
+# Navigation (example structure)
+nav:
+  - Home: index.md
+  - Guides:
+      - Setup: setup-guide.md
+      - User guide: user-guide.md
+      - API reference: api-guide.md
+  - Library: 
+      - Markdown syntax: markdown-style-sampler.md
+#      - Quickstart: getting-started/quickstart.md
+#  - Guides:
+#      - Configuration: guides/configuration.md
+#      - Theming: guides/theming.md
+ #     - Deployment: guides/deployment.md
+ # - Reference:
+ #     - CLI: reference/cli.md
+ #     - YAML: reference/mkdocs-yaml.md
+ # - FAQ: faq.md
+ # - Changelog: changelog.md
+
+# Extra configuration for Material
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Iurii132
+
+
+# Edit/Contribute links (shows "Edit this page" button)
+edit_uri: edit/main/docs/
+
+# Documentation directory
+docs_dir: docs
+
+# Optional: extra CSS/JS
+extra_css:
+  - md-assets/styles/extra.css
+extra_javascript:
+  - md-assets/js/extra.js

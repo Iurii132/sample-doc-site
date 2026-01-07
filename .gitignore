@@ -1,5 +1,5 @@
 
 # Ignore build script in root directory
-/build.bat
-/serve.bat
+/documentation/build.bat
+/documentation/serve.bat
 ``

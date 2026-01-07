@@ -1,9 +1,14 @@
-
 name: Deploy MkDocs site to GitHub Pages
 
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'documentation/**'     # Only run when files under /documentation change
+      # (Optional) include triggers for config if you keep them outside:
+      # - 'mkdocs.yml'
+      # - 'requirements.txt'
+      # - '.github/workflows/*.yml'
   workflow_dispatch:
 
 permissions:
