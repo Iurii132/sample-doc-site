@@ -25,6 +25,27 @@ app.post('/api/items', (req, res) => {
   res.status(201).json(item);
 });
 
+// Get item by id
+app.get('/api/items/:id', (req, res) => {
+  const id = req.params.id;
+  const item = items.find(i => i.id === id);
+  if (!item) {
+    return res.status(404).json({ error: 'Item not found' });
+  }
+  res.status(200).json(item);
+});
+
+// Delete item by id
+app.delete('/api/items/:id', (req, res) => {
+  const id = req.params.id;
+  const idx = items.findIndex(i => i.id === id);
+  if (idx === -1) {
+    return res.status(404).json({ error: 'Item not found' });
+  }
+  items.splice(idx, 1);
+  res.status(204).end();
+});
+
   // Simple unique ID (not cryptographically strong, fine for local dev)
 function cryptoRandomId() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
