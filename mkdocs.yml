@@ -63,8 +63,11 @@ plugins:
 # Navigation (example structure)
 nav:
   - Home: index.md
-  - Getting Started:
-      - Overview: getting-started/markdown-style-sampler.md
+  - Guides:
+      - Setup: guides/setup-guide.md
+      - User guide: guides/user-guide.md
+      - API reference: guides/api-guide.md
+  - Library: library/markdown-style-sampler.md
 #      - Installation: getting-started/installation.md
 #      - Quickstart: getting-started/quickstart.md
 #  - Guides:
@@ -81,9 +84,8 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/<username>
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/<handle>
+      link: https://github.com/Iurii132
+
 
 # Edit/Contribute links (shows "Edit this page" button)
 edit_uri: edit/main/docs/
@@ -93,6 +95,6 @@ docs_dir: docs
 
 # Optional: extra CSS/JS
 extra_css:
-  - styles/extra.css
+  - md-assets/styles/extra.css
 extra_javascript:
-  - js/extra.js
+  - md-assets/js/extra.js

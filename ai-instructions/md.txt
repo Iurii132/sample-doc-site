@@ -1,0 +1,4 @@
+Add paragraphs between paragraphs and different styles
+use four spaces for indents
+use admonitions in the format of the admonitions plugin to the material theme such as !!!note
+Use sentence-style capitalization for headings

@@ -59,15 +59,18 @@ List:
 
 ---
 
-## Admonitions / Callouts — GitHub-style `> [!NOTE]`, `> [!TIP]`, etc.
+## Admonitions / Callouts — GitHub-style `> !!!NOTE`, `> [!TIP]`, etc.
 
-> [!NOTE]
-> This is a **Note** callout using `> [!NOTE]`.
+ !!!NOTE
+     This is a **Note** callout using `!!!NOTE`.
+	 
 >
 > Use it to highlight important information.
 
-> [!TIP]
-> This is a **Tip** callout using `> [!TIP]`.
+!!! TIP
+ 
+    This is a **Tip** callout using `!!! TIP`.
+ 
 >
 > Tips provide helpful hints or best practices.
 
