@@ -3,9 +3,6 @@
 
 [server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js) is a tiny example Express server application intended as a demo component for the docs site. It accepts items with arbitrary JSON payloads and stores items in an in-memory array.
 
-
-
-
 ## Purpose
 
 - Test work with API through a client, such as curl or Postman.

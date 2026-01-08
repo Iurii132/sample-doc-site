@@ -3,13 +3,12 @@
 name: Deploy MkDocs site to GitHub Pages
 
 on:
-  pull_request:
-    types: [ closed ]            # triggers when PR is closed
-    branches: [ release ]        # target branch is release
+  push:
+    branches: [ release ]        # <— run when commits land on release
     paths:
-      - 'documentation/**' # Only run when files under /documentation change
-      - '.github/workflows/*.yml' # Only run when the workflow changes
-  workflow_dispatch:
+      - 'documentation/**'       # only when docs change
+      - '.github/workflows/*.yml'
+  workflow_dispatch:              # manual run
 
 permissions:
   contents: read
@@ -22,7 +21,6 @@ concurrency:
 
 jobs:
   build:
-    if: github.event.pull_request.merged == true   # only run if PR was merged
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -53,10 +51,10 @@ jobs:
       - name: Upload artifact (GitHub Pages)
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: documentation/site
+
 
   deploy:
-    if: github.event.pull_request.merged == true
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
