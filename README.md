@@ -12,7 +12,7 @@ This repository includes the following items:
 ## Purpose
 
 - Provide a sample documentation workflow that includes key artifacts and deliverables - application, documentation site, user guide, setup guide, API guide, and CI/CD process.
-- Explore how AI can update documents together with code
+- Explore how AI can update documents together with code.
 
 ## Quick start
 
@@ -24,7 +24,7 @@ This repository includes the following items:
     mkdocs serve
 	```
 
-- Run the example API:
+- Run the application:
 
 	```
     cd application
@@ -32,4 +32,8 @@ This repository includes the following items:
     npm install express
     node server.js
 	```
+	
+- Execute a GET request to the API:
+
+    `curl http://localhost:8080/api/items`
 

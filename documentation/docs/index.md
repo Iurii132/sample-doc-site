@@ -1,7 +1,52 @@
 ## Overview
 
 
-[server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js) is a tiny example Express server application intended as a demo component for the docs site. It accepts items with arbitrary JSON payloads and stores items in an in-memory array.
+[server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js) is a tiny example Node.js Express server application intended as a demo component for the docs site. It accepts items with arbitrary JSON payloads and stores items in an in-memory array.
+
+
+```mermaid
+
+flowchart TB
+    subgraph A[Node.js Express]
+    style A fill:#dbeafe,stroke:#333,stroke-width:1px
+
+        subgraph B[server.js]
+        style B fill:#fde2e2,stroke:#333,stroke-width:1px
+
+            subgraph C[API - http://localhost:8080/api/items]
+            style C fill:#d1fae5,stroke:#333,stroke-width:1px
+
+                GET[🔎 GET]
+                GET_ID[🔍 GET by id]
+                POST[➕ POST]
+                DELETE_ID[🗑️ DELETE by id]
+
+            end
+        end
+    end
+
+
+    class GET,GET_ID get;
+    classDef get fill:#3b82f6;
+    classDef get stroke:#1e3a8a;
+    classDef get color:#fff;
+    classDef get stroke-width:1px;
+	
+    class POST post;
+    classDef post fill:#10b981;
+    classDef post stroke:#064e3b;
+    classDef post color:#fff;
+    classDef post stroke-width:1px;	
+	
+    class DELETE_ID delete;
+	classDef delete fill:#ef4444;
+    classDef delete stroke:#7f1d1d;
+    classDef delete color:#fff;
+    classDef delete stroke-width:1px;	
+		
+
+```
+
 
 ## Purpose
 

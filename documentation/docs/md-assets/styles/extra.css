@@ -41,3 +41,18 @@ dd { margin: .25rem 0 1rem 0; border-left: 3px solid var(--md-primary-fg-color);
 @media (max-width: 768px) {
   .md-tabs__list { gap: .25rem; }
 }
+
+
+
+/* 8) Headings section separator — scoped to content width only */
+.md-content .md-typeset :is(h2, h3) {
+  position: relative;
+}
+
+.md-content .md-typeset :is(h2, h3)::after {
+  content: "";
+  display: block;
+  height: 0.5px;                                   /* line thickness */
+  background: var(--md-default-fg-color--light);  /* line color */
+  width: 100%;                                    /* match content width */
+  margin: 0.75rem 0;                              /* spacing above/below */

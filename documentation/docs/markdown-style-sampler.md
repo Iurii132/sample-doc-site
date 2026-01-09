@@ -230,6 +230,29 @@ Link to the custom anchor: [Jump to custom anchor](#custom-anchor)
 
 ---
 
+## Mermaid diagrams
+
+Material for MkDocs integrates with Mermaid.js, a very popular and flexible solution for drawing diagrams using code.
+
+```mermaid
+flowchart TD
+    A[Start] --> B{Is it Markdown?}
+    B -- Yes --> C[Render nicely]
+    B -- No --> D[Convert or revise]
+    C --> E[Ship]
+    D --> B
+```
+
+Another Mermaid example (sequence diagram):
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant S as System
+    U->>S: Request sample MD
+    S-->>U: Return Markdown file
+```
+
 ## Checklist of tags used
 
 - Heading 1 — `#`

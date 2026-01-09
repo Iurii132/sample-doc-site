@@ -1,5 +1,12 @@
 
-# Ignore build script in root directory
+# Ignore supporting scripts in the documentation directory
 /documentation/build.bat
 /documentation/serve.bat
+``
+
+
+# Ignore application files in the application directory
+/application/node_modules/
+/application/package.json
+/application/package-lock.json
 ``

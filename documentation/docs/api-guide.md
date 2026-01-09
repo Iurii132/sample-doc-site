@@ -1,7 +1,12 @@
 
+## Swagger file
+
+Swagger file - [openapi.yml](https://github.com/Iurii132/learning-tech/blob/main/application/openapi.yml).
+
 ## Base URL
 
 Base URL: http://localhost:8080
+
 
 
 ## Endpoints
@@ -22,7 +27,7 @@ The following table provides a summary of endpoints:
 - GET `/api/items`
 
     - Description: Returns an array of items stored in memory.
-    - Response: 200 OK
+    - Response code: 200 OK
 
 **Example - curl:**
 
@@ -40,7 +45,7 @@ Request:
 
 - URL: http://localhost:8080/api/items
 
-Response: 200 OK (Request successful. The server responded as required.)
+Response code: 200 OK (Request successful. The server responded as required.)
 
 Response body:
 
@@ -79,6 +84,8 @@ Response body:
     - Success: 201 Created with the created item in the response body.
     - Error: 400 Bad Request when payload is empty or invalid JSON.
 
+!!!Note
+    - `id` is generated via `cryptoRandomId()` in `application/server.js` and is not meant to be collision-resistant.
 
 **Example - curl:**
 
@@ -124,7 +131,7 @@ Request:
     }
     ```
 
-Response: 201 Created (A new resource was created successfully)
+Response code: 201 Created (A new resource was created successfully)
 
 Response body:
 
@@ -169,7 +176,7 @@ GET `/api/items/<id>`
 
 - Description: Returns a single item by `id`.
 
-- Response: 200 OK with the item body, or 404 Not Found if the id does not exist.
+- Response code: 200 OK with the item body, or 404 Not Found if the id does not exist.
 
 **Example - curl:**
 
@@ -190,10 +197,3 @@ DELETE `/api/items/<id>`
 Request: `curl -X DELETE http://localhost:8080/api/items/26s58izyhxtmk55zj26`
 
 Response: Empty.
-
-	
-## Notes
-
-!!!Notes
-    - `id` is generated via `cryptoRandomId()` in `application/server.js` and is not meant to be collision-resistant.
-    - If you extend the API, add route docs here and update `docs/guides/user-guide.md` with usage examples.
