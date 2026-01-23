@@ -4,9 +4,9 @@
 
 This repository includes the following items:
 
-- API application [server.js](https://github.com/Iurii132/learning-tech/blob/main/application/server.js).
+- API application [server.js](https://github.com/Iurii132/sample-doc-site/blob/main/application/server.js).
 - Documentation for the API application in markdown format and configuration files for the documentation site.
-- GitHub Actions [workflow](https://github.com/Iurii132/learning-tech/actions/workflows/pages-deploy.yml) to deploy the documentation to [GitHub Pages](https://iurii132.github.io/learning-tech/) when there are changes to the `documentation` folder under the `release` branch.
+- GitHub Actions [workflow](https://github.com/Iurii132/sample-doc-site/actions/workflows/pages-deploy.yml) to deploy the documentation to [GitHub Pages](https://iurii132.github.io/sample-doc-site/) when there are changes to the `documentation` folder under the `release` branch.
 
 
 ## Purpose
