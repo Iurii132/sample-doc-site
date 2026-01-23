@@ -1,9 +1,9 @@
 
 site_name: Sample documentation site
 site_description: A clean, modern docs site powered by MkDocs Material.
-site_url: https://Iurii132.github.io/learning-tech
-repo_url: https://github.com/Iurii132/learning-tech
-repo_name: Iurii132/learning-tech
+site_url: https://Iurii132.github.io/sample-doc-site
+repo_url: https://github.com/Iurii132/sample-doc-site
+repo_name: Iurii132/sample-doc-site
 
 # Theme configuration (Material)
 theme:
@@ -81,14 +81,14 @@ plugins:
 
 # Navigation (example structure)
 nav:
-  - Home: index.md
+  - Quickstart: quickstart.md
   - Guides:
       - Setup: setup-guide.md
       - User guide: user-guide.md
       - API guide: api-guide.md
   - Library: 
       - Markdown syntax: markdown-style-sampler.md
-#      - Quickstart: getting-started/quickstart.md
+  - About: index.md
 #  - Guides:
 #      - Configuration: guides/configuration.md
 #      - Theming: guides/theming.md

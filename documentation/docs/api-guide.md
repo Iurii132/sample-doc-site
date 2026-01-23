@@ -1,7 +1,7 @@
 
 ## Swagger file
 
-Swagger file - [openapi.yml](https://github.com/Iurii132/learning-tech/blob/main/application/openapi.yml).
+Swagger file - [openapi.yml](https://github.com/Iurii132/sample-doc-site/blob/main/application/openapi.yml).
 
 ## Base URL
 
