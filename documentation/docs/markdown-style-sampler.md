@@ -4,7 +4,7 @@ This page includes common markdown syntax.
 
 ## Paragraph text
 
-Intro paragraph showing **bold**, *italic*, and `inline code`. Also a [link](https://example.com) and an image:
+Intro paragraph showing **bold**, *italic*, and `inline code`. Also a [link](https://github.com/Iurii132/sample-doc-site) and an image:
 
 ![Alt text for image](https://www.mkdocs.org/img/favicon.ico "Placeholder Image")
 
@@ -54,7 +54,7 @@ List:
 	
         - Third level  `-` plus eight spaces ` `
 		
-            Indented text `twelve spaces`Indented text `twelve spaces`
+            Indented text `twelve spaces`
 	
 List:
 
