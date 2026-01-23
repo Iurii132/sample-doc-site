@@ -4,26 +4,33 @@ This guide explains how to set up and run the server application `server.js` loc
 
 ## Prerequisites
 
-- Node.js (tested with Node 16+)
-- npm (comes with Node)
+- Download and install [node.js](https://nodejs.org/en/download)
 
-## Quick setup (recommended)
+## Setup
 
-1. Open a terminal and change to the application folder:
+
+1. Clone the [repository](https://github.com/Iurii132/sample-doc-site.git) or download the [application](https://github.com/Iurii132/sample-doc-site/tree/main/application) folder.
+
+1. Open a command prompt.
+
+1. Go to the `application` folder.
 
     `cd application`
-
-2. Create a `package.json` and install `express`:
-
-    `npm init -y`
 	
-    `npm install express`
+1. Initialize a Node project:
 
-3. Run the server:
+	`npm init -y`
+
+1. Install the `express` module.
+
+	`npm install express`		
+	
+1. Run the application:
 
     `node server.js`
-	
+
 ![media](media/index1.png)
+
 
 The server listens on port 8080 by default and exposes a small in-memory API under `/api/items`.
 
