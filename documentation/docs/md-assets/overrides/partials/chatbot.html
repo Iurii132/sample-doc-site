@@ -35,81 +35,35 @@
   <input id="chat-input" placeholder="Ask a question..." autocomplete="off" />
 </div>
 
-<!-- Load chatbot script -->
+<!-- Chatbot script loaded via `extra_javascript` in mkdocs.yml -->
 <script>
-  // Inline the chatbot initialization
-  async function sendMessageToBot(message) {
-    try {
-      const res = await fetch("http://localhost:8001/health", {
-        method: "GET",
-        headers: {
-          "Accept": "application/json",
-        }
-      });
-
-      if (!res.ok) {
-        return `Server error: ${res.status}`;
-      }
-
-      let data;
+  // Bootstrap loader: ensure chatbot.js is loaded even with client-side navigation
+  (function(){
+    if (window.__chatbot_loader_installed) return; window.__chatbot_loader_installed = true;
+    function loadScript(src){
+      if (document.querySelector('script[src="'+src+'"]')) return;
+      var s = document.createElement('script'); s.src = src; s.async = false; s.defer = false;
+      document.head.appendChild(s);
+    }
+    function getSiteRoot(){
+      var el = document.querySelector('link[rel="canonical"]');
+      if (!el || !el.href) return '';
       try {
-        data = await res.json();
-        return data.reply || JSON.stringify(data);
-      } catch {
-        const text = await res.text();
-        return text;
-      }
-
-    } catch (err) {
-      console.error("Chatbot fetch failed:", err);
-      return "Failed to reach backend at http://localhost:8001/health";
+        var url = new URL(el.href);
+        var path = url.pathname;
+        // Extract base: if canonical is /sample-doc-site/ or /sample-doc-site/some/page/, 
+        // we want /sample-doc-site/
+        var match = path.match(/^(\/[^\/]+\/)/);
+        return match ? match[1] : '/';
+      } catch(e) { return ''; }
     }
-  }
-
-  function escapeHtml(str) {
-    return str
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function setupChat() {
-    const input = document.getElementById("chat-input");
-    const log = document.getElementById("chat-log");
-    if (!input || !log) {
-      console.warn("Chat elements not found");
-      return;
+    function ensure(){
+      var root = getSiteRoot();
+      var src = root + 'md-assets/js/chatbot.js';
+      loadScript(src);
     }
-
-    input.addEventListener("keydown", async (e) => {
-      if (e.key === "Enter") {
-        e.preventDefault();
-        const value = input.value.trim();
-        if (!value) return;
-
-        log.innerHTML += `<div><b>You:</b> ${escapeHtml(value)}</div>`;
-        input.value = "";
-
-        const typingId = `t${Date.now()}`;
-        log.innerHTML += `<div id="${typingId}"><i>Bot is typing…</i></div>`;
-        log.scrollTop = log.scrollHeight;
-
-        const reply = await sendMessageToBot(value);
-
-        const typingEl = document.getElementById(typingId);
-        if (typingEl) typingEl.remove();
-
-        log.innerHTML += `<div><b>Bot:</b> ${escapeHtml(reply)}</div>`;
-        log.scrollTop = log.scrollHeight;
-      }
-    });
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupChat);
-  } else {
-    setupChat();
-  }
+    // Load immediately and on navigation events
+    ensure();
+    document.addEventListener('navigation', ensure);
+  })();
 </script>
