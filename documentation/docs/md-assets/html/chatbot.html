@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Chatbot</title>
+  <style>
+    #chat-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 320px;
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      font-family: sans-serif;
+    }
+    #chat-log {
+      height: 200px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-widget">
+    <div id="chat-log"></div>
+    <input id="chat-input" placeholder="Ask a question..." autocomplete="off" />
+  </div>
+
+  <!-- Load your external JS after the DOM so elements exist -->
+  <script src="chatbot.js"></script>
+</body>
+</html>
