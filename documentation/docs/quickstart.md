@@ -8,16 +8,17 @@
 
 flowchart TB
     subgraph A[Node.js Express]
-    style A fill:#dbeafe,stroke:#333,stroke-width:1px
+    style A fill:#dbeafe,stroke:#333,stroke-width:1px,color:#000
 
         subgraph B[server.js]
-        style B fill:#fde2e2,stroke:#333,stroke-width:1px
+        style B fill:#fde2e2,stroke:#333,stroke-width:1px,color:#000
 
 			
             subgraph C[API]
-            style C fill:#d1fae5,stroke:#333,stroke-width:1px
+            style C fill:#d1fae5,stroke:#333,stroke-width:1px,color:#000
 
                 Base[Base URL - http://localhost:8080/api/items]
+                style Base color:#000
                 GET[🔎 GET]
                 GET_ID[🔍 GET by id]
                 POST[➕ POST]
@@ -29,23 +30,24 @@ flowchart TB
 
 
     class GET,GET_ID get;
-    classDef get fill:#3b82f6;
+    classDef get fill:#93c5fd; 
     classDef get stroke:#1e3a8a;
-    classDef get color:#fff;
+    classDef get color:#000; 
     classDef get stroke-width:1px;
 	
     class POST post;
-    classDef post fill:#10b981;
+    classDef post fill:#6ee7b7; 
     classDef post stroke:#064e3b;
-    classDef post color:#fff;
+    classDef post color:#000; 
     classDef post stroke-width:1px;	
 	
     class DELETE_ID delete;
-	classDef delete fill:#ef4444;
+	classDef delete fill:#fca5a5;
     classDef delete stroke:#7f1d1d;
-    classDef delete color:#fff;
+    classDef delete color:#000; 
     classDef delete stroke-width:1px;	
-		
+	
+
 
 ```
 

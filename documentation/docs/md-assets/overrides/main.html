@@ -1,0 +1,7 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  {% include "partials/chatbot.html" %}  {# will be resolved inside overrides/ #}
+{% endblock %}

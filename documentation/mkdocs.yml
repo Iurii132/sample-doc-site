@@ -8,19 +8,20 @@ repo_name: Iurii132/sample-doc-site
 # Theme configuration (Material)
 theme:
   name: material
+  custom_dir: docs/md-assets/overrides
   language: en
   logo: ./md-assets/logo.png
   favicon: ./md-assets/favicon.png
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: blue grey
+      accent: grey
       toggle:
         icon: material/weather-night
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: black
+      accent: grey
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -33,7 +34,7 @@ theme:
   features:
     - navigation.instant #clicks on all internal links will be intercepted and dispatched via XHR without fully reloading the page
     - navigation.top # button to go back to the top of the page 
-    - navigation.tabs
+#    - navigation.tabs #show navigation tabs for sections
     - navigation.indexes
 #    - toc.integrate # hide right navigation pane for a section
     - navigation.tracking # the URL in the address bar is automatically updated with the active anchor as highlighted in the table of contents
@@ -117,3 +118,11 @@ extra_css:
   - md-assets/styles/extra.css
 extra_javascript:
   - md-assets/js/extra.js
+  - md-assets/js/chatbot.js
+
+
+# Only use extra_templates if you plan to override theme templates (not to serve a page)
+# extra_templates:
+
+#  extra_templates:
+#    - md-assets/html/chatbot.html
