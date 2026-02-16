@@ -46,6 +46,26 @@ app.delete('/api/items/:id', (req, res) => {
   res.status(204).end();
 });
 
+// Patch (partial update) item by id
+app.patch('/api/items/:id', (req, res) => {
+  const payload = req.body;
+  if (!payload || Object.keys(payload).length === 0 || typeof payload !== 'object') {
+    return res.status(400).json({ error: 'Empty or invalid JSON' });
+  }
+
+  const id = req.params.id;
+  const item = items.find(i => i.id === id);
+  if (!item) {
+    return res.status(404).json({ error: 'Item not found' });
+  }
+
+  // Merge provided fields into the existing payload (shallow merge)
+  item.payload = Object.assign({}, item.payload, payload);
+  item.modified = new Date().toISOString();
+
+  res.status(200).json(item);
+});
+
   // Simple unique ID (not cryptographically strong, fine for local dev)
 function cryptoRandomId() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);

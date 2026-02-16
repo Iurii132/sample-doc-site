@@ -22,6 +22,7 @@ flowchart TB
                 GET[🔎 GET]
                 GET_ID[🔍 GET by id]
                 POST[➕ POST]
+                PATCH_ID[🩹 PATCH]
                 DELETE_ID[🗑️ DELETE by id]
 
             end
@@ -41,6 +42,12 @@ flowchart TB
     classDef post color:#000; 
     classDef post stroke-width:1px;	
 	
+    class PATCH_ID patch;
+    classDef patch fill:#fde68a;
+    classDef patch stroke:#92400e;
+    classDef patch color:#000;
+    classDef patch stroke-width:1px;
+
     class DELETE_ID delete;
 	classDef delete fill:#fca5a5;
     classDef delete stroke:#7f1d1d;

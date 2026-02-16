@@ -14,8 +14,9 @@
 
 - GET `/api/items` — returns the current array of items (200 OK).
 - POST `/api/items` — accepts a free-form JSON body, validates it is not empty, and returns the created item (201 Created). If the POST body is empty or invalid JSON, returns 400 Bad Request.
-- GET `/api/items/id` — returns an item by id (200 OK).
-- DELETE `/api/items/id` — deletes an item by id (204 OK).
+- GET `/api/items/<id>` — returns an item by id (200 OK).
+- PATCH `/api/items/<id>` — applies a partial update to the item's JSON payload (200 OK). Accepts a non-empty JSON object; returns 400 for invalid/empty payload, 404 if not found.
+- DELETE `/api/items/<id>` — deletes an item by id (204 OK).
 
 
 **Usage Examples:**
@@ -33,6 +34,10 @@
 - Get item by id (replace `<id>` with a real id):
 
     `curl -s http://localhost:8080/api/items/<id>`
+
+- Patch (partial update) item by id (replace `<id>` with a real id):
+
+    `curl -s -X PATCH "http://localhost:8080/api/items/<id>" -H "Content-Type: application/json" -d "{\"price\":29.99}"`
 
 - Delete item by id (replace `<id>` with a real id):
 

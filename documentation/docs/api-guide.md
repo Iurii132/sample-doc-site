@@ -18,6 +18,7 @@ The following table provides a summary of endpoints:
 |`/api/items`|GET|Returns an array of items stored in memory.|
 |`/api/items`|POST|Creates a new item in memory based on the provided JSON body.|
 |`/api/items/<id>`|GET|Returns a single item by `id` (404 if not found).|
+|`/api/items/<id>`|PATCH|Applies a partial update to a stored item's payload (200 on success, 400/404 on error).|
 |`/api/items/<id>`|DELETE|Deletes an item by `id` (204 on success, 404 if not found).|
 
 
@@ -169,6 +170,22 @@ Response body:
 ```
 
 ![media](media/index2.png)
+
+### PATCH
+
+PATCH `/api/items/<id>`
+
+- Description: Applies a partial update to the stored item's payload. The request body must be a non-empty JSON object. Fields provided will be shallow-merged into the existing payload.
+
+- Success: 200 OK with the updated item in the response body.
+- Errors: 400 Bad Request when payload is empty or invalid JSON; 404 Not Found when the id does not exist.
+
+**Example - curl:**
+
+Request: `curl -X PATCH "http://localhost:8080/api/items/<id>" -H "Content-Type: application/json" -d "{\"price\":29.99}"`
+
+Response: `{"id":"ye5q3z8hzimk553jxu","received":"2026-01-08T07:42:31.602Z","modified":"2026-01-09T12:00:00.000Z","payload":{"name":"test","price":29.99}}`
+
 
 ### GET by id
 
